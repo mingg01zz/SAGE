@@ -1,0 +1,44 @@
+version: "3.1"
+
+actions:
+  - action_find_hospital
+intents:
+  - greet
+  - goodbye
+  - find_hospital
+
+entities:
+  - location
+  - service
+  - price
+
+slots:
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+
+  service:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: service
+
+  price:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: price
+
+responses:
+  utter_greet:
+    - text: 안녕하세요! 무엇을 도와드릴까요?
+  utter_goodbye:
+    - text: 안녕히 가세요!
+  utter_ask_location:
+    - text: 어느 지역의 병원을 찾고 계신가요?
+  utter_ask_service:
+    - text: 필요한 서비스가 있으신가요?
+  utter_ask_price:
+    - text: 예산은 얼마 정도 생각하시나요?
