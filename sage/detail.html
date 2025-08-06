@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>SAGE | 시설 상세</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main>
+    <div class="facility-detail">
+      <img id="detailImg" src="img/cheongun.jpg" alt="시설 이미지" class="detail-img">
+      <div class="detail-info">
+        <h2 id="detailName">청운노인요양원</h2>
+        <div id="detailAddress">서울특별시 종로구 평창동 7길 76</div>
+        <div id="detailPhone">02-3217-0057</div>
+        <div id="detailGrade">1등급</div>
+        <div id="detailDesc">이곳은 쾌적한 환경과 전문 요양 서비스를 제공합니다.</div>
+        <button onclick="addToCompare(1)">비교담기</button>
+      </div>
+    </div>
+  </main>
+ 
+  <script src="js/detail.js">
+    fetch('header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
+    fetch('footer.html').then(r=>r.text()).then(t=>document.getElementById('footer').innerHTML=t);
+  </script>
+</body>
+</html> 

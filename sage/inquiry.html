@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>SAGE | 내 문의 내역</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main class="mypage-main">
+    <div class="mypage-sidebar">
+      <h2 class="mypage-title">마이페이지<br><br></h2>
+      <ul class="mypage-menu">
+        <li><a href="mypage.html">내정보</a></li>
+        <li><a href="inquiry.html">문의사항</a></li>
+        <li><a href="favorite.html">즐겨찾기</a></li>
+        <li><a href="editinfo.html">정보수정</a></li>
+      </ul>
+    </div>
+    <div class="mypage-content">
+      <div class="mypage-inner-content">
+        <h2 class="inquiry-title">문의 내역</h2>
+        <div class="inquiry-filter-row">
+          <div class="inquiry-filter-right">
+            <span class="inquiry-filter-icon">&#128269; 필터</span>
+            <select class="inquiry-filter-select">
+              <option>전체</option>
+              <option>기타</option>
+            </select>
+          </div>
+        </div>
+        <div class="inquiry-table-wrap">
+          <table class="inquiry-table">
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>문의 유형</th>
+                <th>문의 제목</th>
+                <th>문의 날짜</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="inquiry-empty-row">
+                <td colspan="5" class="inquiry-empty">문의 내역이 없습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="inquiry-btn-right">
+        <button class="inquiry-write-btn">
+          <span class="inquiry-write-icon">&#128221;</span> 문의하기</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script>
+    fetch('header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
+    fetch('footer.html').then(r=>r.text()).then(t=>document.getElementById('footer').innerHTML=t);
+    // 문의 상세 토글
+    document.querySelectorAll('.inquiry-summary').forEach(function(row){
+      row.onclick = function() {
+        var detail = this.nextElementSibling;
+        if(detail) detail.style.display = (detail.style.display === 'block') ? 'none' : 'block';
+      }
+    });
+  </script>
+</body>
+</html> 

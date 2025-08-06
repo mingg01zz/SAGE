@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>SAGE - 자주 묻는 질문 글쓰기</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/faq-faqwrite.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main class="faq-main">
+    <div class="faq-title-wrap">
+      <h2 class="faq-title">자주 묻는 질문</h2>
+    </div>
+    <form class="faq-write-form">
+      <div class="faq-write-row">
+        <label for="faq-title-input">제목</label>
+        <input type="text" id="faq-title-input" name="title" required placeholder="제목을 입력하세요">
+      </div>
+      <div class="faq-write-row">
+        <label for="faq-content-input">내용</label>
+        <textarea id="faq-content-input" name="content" rows="10" required placeholder="내용을 입력하세요"></textarea>
+      </div>
+      <div class="faq-write-btns">
+        <button type="submit" class="faq-submit-btn">등록</button>
+        <button type="button" class="faq-cancel-btn" onclick="history.back()">취소</button>
+      </div>
+    </form>
+  </main>
+  <div id="footer"></div>
+  <script>
+    fetch('header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
+    fetch('footer.html').then(r=>r.text()).then(t=>document.getElementById('footer').innerHTML=t);
+  </script>
+</body>
+</html>

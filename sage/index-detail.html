@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시설 상세정보 - SAGE</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index-detail.css">
+</head>
+<body>
+    <div id="header"></div>
+    
+    <main class="detail-main">
+        <div class="detail-container">
+            <!-- 시설 기본 정보 -->
+            <div class="facility-header">
+                <div class="facility-title">
+                    <h1>청운노인요양원 ★</h1>
+                    <p class="facility-address">서울특별시 종로구 비봉길 76(구기동)</p>
+                </div>
+            </div>
+
+            <!-- 시설 사진 슬라이더 -->
+            <div class="facility-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-wrapper">
+                        <div class="gallery-slide active">
+                            <img src="img/1.jpg" alt="시설 사진 1" class="gallery-image">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="img/2.jpg" alt="시설 사진 2" class="gallery-image">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="img/3.jpg" alt="시설 사진 3" class="gallery-image">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="img/4.jpg" alt="시설 사진 4" class="gallery-image">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="img/5.jpg" alt="시설 사진 5" class="gallery-image">
+                        </div>
+                    </div>
+                    <button class="gallery-btn gallery-prev" onclick="changeSlide(-1)">‹</button>
+                    <button class="gallery-btn gallery-next" onclick="changeSlide(1)">›</button>
+                    <div class="gallery-dots">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 시설 기본 정보 -->
+            <div class="facility-basic-info">
+                <div class="info-row">
+                    <span class="info-label">설립구분</span>
+                    <span class="info-value">개인</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">설립일자</span>
+                    <span class="info-value">2016-12-12</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">전화번호</span>
+                    <span class="info-value">02-3217-0057</span>
+                </div>
+            </div>
+
+            <!-- 최근 본 시설 -->
+            <div class="recent-facilities-section">
+                <h3 class="recent-facilities-title">최근 본 시설</h3>
+                <div class="recent-facilities-grid">
+                    <div class="recent-facility-card">
+                        <img src="img/1.jpg" alt="시설 이미지" class="recent-facility-img">
+                        <div class="recent-facility-info">
+                            <h4 class="recent-facility-name">청운노인요양원</h4>
+                            <p class="recent-facility-addr">서울특별시 종로구</p>
+                        </div>
+                    </div>
+                    <div class="recent-facility-card">
+                        <img src="img/2.jpg" alt="시설 이미지" class="recent-facility-img">
+                        <div class="recent-facility-info">
+                            <h4 class="recent-facility-name">서울요양원</h4>
+                            <p class="recent-facility-addr">서울특별시 강남구</p>
+                        </div>
+                    </div>
+                    <div class="recent-facility-card">
+                        <img src="img/3.jpg" alt="시설 이미지" class="recent-facility-img">
+                        <div class="recent-facility-info">
+                            <h4 class="recent-facility-name">행복요양원</h4>
+                            <p class="recent-facility-addr">서울특별시 서초구</p>
+                        </div>
+                    </div>
+                    <div class="recent-facility-card">
+                        <img src="img/4.jpg" alt="시설 이미지" class="recent-facility-img">
+                        <div class="recent-facility-info">
+                            <h4 class="recent-facility-name">평화요양원</h4>
+                            <p class="recent-facility-addr">서울특별시 마포구</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 본인 부담금 -->
+            <div class="self-pay-section">
+                <h2 class="section-title">본인 부담금</h2>
+                <div class="self-pay-amount">
+                    <p>(예상) 월 000원</p>
+                </div>
+                <div class="fee-options">
+                    <div class="fee-column">
+                        <h3>급여 입원료</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="inpatient" value="selected"> 선택입원군</label>
+                            <label><input type="radio" name="inpatient" value="mild"> 의료경도</label>
+                            <label><input type="radio" name="inpatient" value="moderate"> 의료중도</label>
+                            <label><input type="radio" name="inpatient" value="high"> 의료고도</label>
+                            <label><input type="radio" name="inpatient" value="highest"> 의료최고도</label>
+                        </div>
+                    </div>
+                    <div class="fee-column">
+                        <h3>상급병실료</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="room" value="standard"> 일반실: 0원</label>
+                            <label><input type="radio" name="room" value="premium"> 월 000원</label>
+                        </div>
+                    </div>
+                </div>
+                <p class="note">정확한 금액은 시설에 문의 바랍니다.</p>
+            </div>
+
+            <!-- 시설 및 운영정보 -->
+            <div class="facility-info-section">
+                <h2 class="section-title">시설 및 운영정보</h2>
+                <div class="info-grid">
+                    <div class="info-group">
+                        <h3>병상수</h3>
+                        <div class="info-item">
+                            <span class="item-label">일반입원실</span>
+                            <span class="item-value">일반 : 142명</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">물리치료실</span>
+                            <span class="item-value">2명</span>
+                        </div>
+                    </div>
+                    <div class="info-group">
+                        <h3>운영/시설</h3>
+                        <div class="info-item">
+                            <span class="item-label">입지정보</span>
+                            <span class="item-value">단독건물</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">자원봉사활동</span>
+                            <span class="item-value">Y</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">종교활동</span>
+                            <span class="item-value">Y</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">간병형태</span>
+                            <span class="item-value">공동간병</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 진료과목 및 의사현황 -->
+            <div class="medical-staff-section">
+                <h2 class="section-title">진료과목 및 의사현황</h2>
+                <div class="staff-info">
+                    <div class="staff-group">
+                        <h3>의사수</h3>
+                        <div class="info-item">
+                            <span class="item-label">총 인원</span>
+                            <span class="item-value">5명</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">의사</span>
+                            <span class="item-value">5명</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">한의사</span>
+                            <span class="item-value">2명</span>
+                        </div>
+                    </div>
+                    <div class="staff-group">
+                        <h3>전문과목별(전문의수)</h3>
+                        <div class="info-item">
+                            <span class="item-label">외과</span>
+                            <span class="item-value">1명</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">산부인과</span>
+                            <span class="item-value">1명</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">예방의학과</span>
+                            <span class="item-value">1명</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 진료시간 -->
+            <div class="consultation-hours-section">
+                <h2 class="section-title">진료시간</h2>
+                <div class="hours-info">
+                    <div class="hours-item">
+                        <span class="day">월요일</span>
+                        <span class="time">09:00-18:00</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">화요일</span>
+                        <span class="time">09:00-18:00</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">수요일</span>
+                        <span class="time">09:00-18:00</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">목요일</span>
+                        <span class="time">09:00-18:00</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">금요일</span>
+                        <span class="time">09:00-18:00</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">토요일</span>
+                        <span class="time">09:00-13:00</span>
+                    </div>
+                    <div class="hours-item closed">
+                        <span class="day">일요일</span>
+                        <span class="time">휴진</span>
+                    </div>
+                    <div class="hours-item closed">
+                        <span class="day">공휴일</span>
+                        <span class="time">휴진</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 의료 정보 -->
+            <div class="medical-info-section">
+                <h2 class="section-title">의료 정보</h2>
+                <div class="medical-info-grid">
+                    <div class="medical-group">
+                        <h3>특수 및 진단용 방사선 발생장치</h3>
+                        <div class="info-item">
+                            <span class="item-label">일반엑스선촬영장치</span>
+                            <span class="item-value">1</span>
+                        </div>
+                    </div>
+                    <div class="medical-group">
+                        <h3>의사인력</h3>
+                        <div class="info-item">
+                            <span class="item-label">의사인력</span>
+                            <span class="item-value">1명</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">간호인력</span>
+                            <span class="item-value">1명</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 진료비정보 버튼 -->
+            <div class="medical-fee-section">
+                <div class="fee-button">
+                    <span>진료비정보</span>
+                    <button class="detail-btn" onclick="showMedicalFeeModal()">상세보기</button>
+                </div>
+            </div>
+
+            <!-- 구글 지도 -->
+            <div class="map-section">
+                <h2 class="section-title">구글 지도</h2>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        구글 지도
+                    </div>
+                </div>
+            </div>
+            <button class="list-btn" onclick="window.location.href='index.html'">목록</button>
+        </div>
+
+        <!-- 진료비정보 모달 -->
+        <div id="medicalFeeModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>진료비정보</h3>
+                    <button class="close-btn" onclick="closeMedicalFeeModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="fee-category">
+                        <h4>예방접종료</h4>
+                        <div class="fee-item">
+                            <span class="fee-name">인플루엔자(독감)</span>
+                            <span class="fee-amount">35,000 원</span>
+                        </div>
+                        <p class="fee-description">(플루아릭스테트라프리필드시린지)</p>
+                    </div>
+                    
+                    <div class="fee-category">
+                        <h4>제증명수수료</h4>
+                        <div class="fee-item">
+                            <span class="fee-name">일반진단서</span>
+                            <span class="fee-amount">20,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">건강진단서</span>
+                            <span class="fee-amount">20,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">업무능력평가진단서</span>
+                            <span class="fee-amount">10,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">사망진단서</span>
+                            <span class="fee-amount">10,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">장애진단서(신체/정신)</span>
+                            <span class="fee-amount">15,000 원 / 40,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">후유장애진단서</span>
+                            <span class="fee-amount">100,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">국민연금장애진단서</span>
+                            <span class="fee-amount">15,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">상해진단서(3주미만/3주이상)</span>
+                            <span class="fee-amount">100,000 원 / 150,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">입원확인서</span>
+                            <span class="fee-amount">3,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">진료확인서</span>
+                            <span class="fee-amount">3,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">향후진료비추정서(1천만원미만/1천만원이상)</span>
+                            <span class="fee-amount">50,000 원 / 100,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">장애증명서</span>
+                            <span class="fee-amount">1,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">진료기록사본(1-5장/6장이상)</span>
+                            <span class="fee-amount">1,000 원 / 100 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">진료기록영상(CD)</span>
+                            <span class="fee-amount">10,000 원</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name">증명서사본</span>
+                            <span class="fee-amount">1,000 원</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
+        fetch('footer.html').then(r=>r.text()).then(t=>document.getElementById('footer').innerHTML=t);
+
+        // URL에서 시설 ID 가져오기
+        function getFacilityId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // 시설 데이터 가져오기 (index.js의 더미 데이터와 동일)
+        function getFacilityData() {
+            return Array.from({length: 300}, (_, i) => {
+                const n = i+1;
+                return {
+                    id: n,
+                    name: n%3===1 ? `청운노인요양원 ${n}` : n%3===2 ? `다나음요양병원 ${n}` : `로하스참사랑요양원 ${n}`,
+                    address: n%3===1 ? '서울특별시 종로구 비봉길 76(구기동)' : n%3===2 ? '서울특별시 송파구 가락로 27길, 지하 1층~지상 6층 (만이동)' : '서울특별시 영등포구 영신로77가길 7, (문래동2가)',
+                    phone: n%3===1 ? '02-3217-0057' : n%3===2 ? '02-412-7272' : '02-2634-7500',
+                    image: n%3===1 ? 'img/1.jpg' : n%3===2 ? 'img/2.jpg' : 'img/3.jpg',
+                    establishmentType: n%3===1 ? '개인' : n%3===2 ? '법인' : '공공',
+                    establishmentDate: n%3===1 ? '2016-12-12' : n%3===2 ? '2015-08-20' : '2017-03-15',
+                    phoneNumber: n%3===1 ? '02-3217-0057' : n%3===2 ? '02-412-7272' : '02-2634-7500',
+                    // 추가 정보
+                    generalWard: n%3===1 ? '일반 : 142명' : n%3===2 ? '일반 : 98명' : '일반 : 156명',
+                    therapyRoom: n%3===1 ? '2명' : n%3===2 ? '3명' : '1명',
+                    locationType: n%3===1 ? '단독건물' : n%3===2 ? '복합건물' : '단독건물',
+                    volunteerActivity: n%3===1 ? 'Y' : n%3===2 ? 'Y' : 'N',
+                    religiousActivity: n%3===1 ? 'Y' : n%3===2 ? 'N' : 'Y',
+                    nursingType: n%3===1 ? '공동간병' : n%3===2 ? '개별간병' : '공동간병',
+                    totalDoctors: n%3===1 ? '5명' : n%3===2 ? '7명' : '3명',
+                    doctors: n%3===1 ? '5명' : n%3===2 ? '6명' : '3명',
+                    orientalDoctors: n%3===1 ? '2명' : n%3===2 ? '1명' : '0명',
+                    surgeryDoctors: n%3===1 ? '1명' : n%3===2 ? '2명' : '1명',
+                    obgynDoctors: n%3===1 ? '1명' : n%3===2 ? '1명' : '0명',
+                    preventiveDoctors: n%3===1 ? '1명' : n%3===2 ? '1명' : '1명',
+                    xrayMachines: n%3===1 ? '1' : n%3===2 ? '2' : '1',
+                    medicalStaff: n%3===1 ? '1명' : n%3===2 ? '2명' : '1명',
+                    nursingStaff: n%3===1 ? '1명' : n%3===2 ? '3명' : '2명'
+                };
+            });
+        }
+
+        // 시설 정보 표시
+        function displayFacilityInfo() {
+            const facilityId = getFacilityId();
+            const facilities = getFacilityData();
+            const facility = facilities.find(f => f.id == facilityId);
+
+            if (!facility) {
+                // 시설을 찾을 수 없는 경우 기본 정보 표시
+                return;
+            }
+
+            // 시설명과 주소 업데이트
+            const titleElement = document.querySelector('.facility-title h1');
+            const addressElement = document.querySelector('.facility-address');
+            
+            if (titleElement) {
+                titleElement.textContent = facility.name + ' ★';
+            }
+            if (addressElement) {
+                addressElement.textContent = facility.address;
+            }
+
+            // 기본 정보 업데이트
+            const infoRows = document.querySelectorAll('.info-row');
+            if (infoRows.length >= 3) {
+                infoRows[0].querySelector('.info-value').textContent = facility.establishmentType;
+                infoRows[1].querySelector('.info-value').textContent = facility.establishmentDate;
+                infoRows[2].querySelector('.info-value').textContent = facility.phoneNumber;
+            }
+
+            // 시설 및 운영정보 업데이트
+            const infoItems = document.querySelectorAll('.info-item');
+            if (infoItems.length >= 6) {
+                // 병상수 정보
+                infoItems[0].querySelector('.item-value').textContent = facility.generalWard;
+                infoItems[1].querySelector('.item-value').textContent = facility.therapyRoom;
+                
+                // 운영/시설 정보
+                infoItems[2].querySelector('.item-value').textContent = facility.locationType;
+                infoItems[3].querySelector('.item-value').textContent = facility.volunteerActivity;
+                infoItems[4].querySelector('.item-value').textContent = facility.religiousActivity;
+                infoItems[5].querySelector('.item-value').textContent = facility.nursingType;
+            }
+
+            // 진료과목 및 의사현황 업데이트
+            const staffInfoItems = document.querySelectorAll('.staff-info .info-item');
+            if (staffInfoItems.length >= 6) {
+                // 의사수 정보
+                staffInfoItems[0].querySelector('.item-value').textContent = facility.totalDoctors;
+                staffInfoItems[1].querySelector('.item-value').textContent = facility.doctors;
+                staffInfoItems[2].querySelector('.item-value').textContent = facility.orientalDoctors;
+                
+                // 전문과목별 정보
+                staffInfoItems[3].querySelector('.item-value').textContent = facility.surgeryDoctors;
+                staffInfoItems[4].querySelector('.item-value').textContent = facility.obgynDoctors;
+                staffInfoItems[5].querySelector('.item-value').textContent = facility.preventiveDoctors;
+            }
+
+            // 의료 정보 업데이트
+            const medicalInfoItems = document.querySelectorAll('.medical-info-grid .info-item');
+            if (medicalInfoItems.length >= 3) {
+                medicalInfoItems[0].querySelector('.item-value').textContent = facility.xrayMachines;
+                medicalInfoItems[1].querySelector('.item-value').textContent = facility.medicalStaff;
+                medicalInfoItems[2].querySelector('.item-value').textContent = facility.nursingStaff;
+            }
+        }
+
+        function showMedicalFeeModal() {
+            document.getElementById('medicalFeeModal').style.display = 'block';
+        }
+
+        function closeMedicalFeeModal() {
+            document.getElementById('medicalFeeModal').style.display = 'none';
+        }
+
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            const modal = document.getElementById('medicalFeeModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // 페이지 로드 시 시설 정보 표시
+        document.addEventListener('DOMContentLoaded', function() {
+            displayFacilityInfo();
+        });
+
+        // 슬라이더 기능
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            // 모든 슬라이드 숨기기
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // 현재 슬라이드와 도트 활성화
+            if (slides[index]) {
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+            }
+        }
+
+        function changeSlide(direction) {
+            currentSlideIndex += direction;
+            
+            // 순환 처리
+            if (currentSlideIndex >= slides.length) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = slides.length - 1;
+            }
+            
+            showSlide(currentSlideIndex);
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index - 1;
+            showSlide(currentSlideIndex);
+        }
+
+        // 자동 슬라이드 (5초마다)
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>

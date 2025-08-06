@@ -1,0 +1,724 @@
+/* index-detail.html 전용 CSS */
+
+.detail-main {
+  min-height: 100vh;
+  background: #f6f8fb;
+  padding: 100px 0 40px 0;
+}
+
+.detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(120,160,255,0.07);
+  padding: 40px;
+  position: relative;
+}
+
+/* 시설 헤더 */
+.facility-header {
+  margin-bottom: 32px;
+  border-bottom: 2px solid #e6f0fa;
+  padding-bottom: 24px;
+}
+
+.facility-title h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.facility-title h1::after {
+  content: '★';
+  color: #ffd600;
+  font-size: 0.8em;
+}
+
+.facility-address {
+  font-size: 1.1em;
+  color: #666;
+  margin: 0;
+}
+
+/* Header 반응형 스타일 */
+@media (max-width: 768px) {
+  .nav-mainlinks {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 12px 20px 12px 16px;
+  }
+  
+  .logo img {
+    height: 32px;
+  }
+  
+  nav {
+    padding-right: 16px;
+  }
+  
+  .nav-auth {
+    padding-right: 16px;
+  }
+  
+  .nav-mainlinks {
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 16px 10px 12px;
+  }
+  
+  .logo img {
+    height: 28px;
+  }
+  
+  nav {
+    padding-right: 12px;
+  }
+  
+  .nav-auth {
+    padding-right: 12px;
+    font-size: 0.85em;
+  }
+  
+  .nav-mainlinks {
+    padding-right: 12px;
+  }
+}
+
+/* 시설 사진 슬라이더 */
+.facility-gallery {
+  margin-bottom: 32px;
+}
+
+.gallery-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.gallery-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-slide.active {
+  opacity: 1;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.gallery-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.gallery-prev {
+  left: 20px;
+}
+
+.gallery-next {
+  right: 20px;
+}
+
+.gallery-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #fff;
+}
+
+/* 시설 기본 정보 */
+.facility-basic-info {
+  background: #f8fbff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  width: 120px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1em;
+}
+
+.info-value {
+  flex: 1;
+  color: #666;
+  font-size: 1em;
+}
+
+.more-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #0074d9;
+  font-size: 0.9em;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.more-btn:hover {
+  text-decoration: underline;
+}
+
+/* 섹션 공통 스타일 */
+.section-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin: 0 0 24px 0;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+/* 본인 부담금 */
+.self-pay-section {
+  margin-bottom: 40px;
+  padding: 32px;
+  background: #f8fbff;
+  border-radius: 8px;
+}
+
+.self-pay-amount {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.self-pay-amount p {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.fee-options {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 16px;
+}
+
+.fee-column {
+  flex: 1;
+}
+
+.fee-column h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 12px 0;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95em;
+  color: #666;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+  margin: 0;
+}
+
+.note {
+  font-size: 0.9em;
+  color: #888;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+}
+
+/* 시설 및 운영정보 */
+.facility-info-section {
+  margin-bottom: 40px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.info-group h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.item-label {
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.item-value {
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* 진료과목 및 의사현황 */
+.medical-staff-section {
+  margin-bottom: 40px;
+}
+
+.staff-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.staff-group h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* 진료시간 */
+.consultation-hours-section {
+  margin-bottom: 40px;
+}
+
+.hours-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8fbff;
+  border-radius: 6px;
+  border: 1px solid #e6f0fa;
+}
+
+.hours-item.closed {
+  background: #f5f5f5;
+  color: #888;
+}
+
+.day {
+  font-weight: 500;
+  color: #333;
+}
+
+.time {
+  font-weight: 500;
+  color: #666;
+}
+
+.hours-item.closed .day,
+.hours-item.closed .time {
+  color: #888;
+}
+
+/* 의료 정보 */
+.medical-info-section {
+  margin-bottom: 40px;
+}
+
+.medical-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.medical-group h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* 진료비정보 버튼 */
+.medical-fee-section {
+  margin-bottom: 40px;
+}
+
+.fee-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: #f8fbff;
+  border-radius: 8px;
+  border: 1px solid #e6f0fa;
+}
+
+.fee-button span {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+}
+
+.detail-btn {
+  background: #0074d9;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.detail-btn:hover {
+  background: #0056b3;
+}
+
+/* 구글 지도 */
+.map-section {
+  margin-bottom: 40px;
+}
+
+.map-container {
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.map-placeholder {
+  height: 300px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.list-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: #0074d9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  margin-right: 24px;
+}
+
+.list-btn:hover {
+  background: #0056b3;
+}
+
+/* 모달 스타일 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e6e6e6;
+  background: #f8fbff;
+}
+
+.modal-header h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.fee-category {
+  margin-bottom: 32px;
+}
+
+.fee-category h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.fee-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.fee-item:last-child {
+  border-bottom: none;
+}
+
+.fee-name {
+  font-size: 0.95em;
+  color: #333;
+}
+
+.fee-amount {
+  font-weight: 600;
+  color: #0074d9;
+  font-size: 0.95em;
+}
+
+.fee-description {
+  font-size: 0.85em;
+  color: #888;
+  margin: 4px 0 0 0;
+  font-style: italic;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 900px) {
+  .detail-container {
+    margin: 0 20px;
+    padding: 24px;
+  }
+  
+  .facility-title h1 {
+    font-size: 1.8em;
+  }
+  
+  .gallery-container {
+    height: 300px;
+  }
+  
+  .gallery-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .info-grid,
+  .staff-info,
+  .medical-info-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .fee-options {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .hours-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-main {
+    padding: 80px 0 20px 0;
+  }
+  
+  .detail-container {
+    margin: 0 10px;
+    padding: 16px;
+  }
+  
+  .facility-title h1 {
+    font-size: 1.5em;
+  }
+  
+  .section-title {
+    font-size: 1.3em;
+  }
+  
+  .gallery-container {
+    height: 250px;
+  }
+  
+  .gallery-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  .gallery-dots {
+    bottom: 15px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .self-pay-section,
+  .facility-basic-info {
+    padding: 16px;
+  }
+  
+  .fee-button {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .list-btn {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    bottom: 12px;
+    right: 12px;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+  
+  .modal-header,
+  .modal-body {
+    padding: 16px;
+  }
+} 

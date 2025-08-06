@@ -1,0 +1,21 @@
+version: "3.0"
+
+stories:
+- story: find hospital
+  steps:
+  - intent: find_hospital
+  - action: action_find_hospital
+
+- story: find hospital with location
+  steps:
+  - intent: find_hospital
+    entities:
+      - location: "서울"
+  - action: action_find_hospital
+
+- story: find hospital with service
+  steps:
+  - intent: find_hospital
+    entities:
+      - service: "재활"
+  - action: action_find_hospital

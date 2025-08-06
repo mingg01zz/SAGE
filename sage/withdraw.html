@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>SAGE | 탈퇴하기</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="main.html"><img src="img/sage-logo-temp.png" alt="SAGE 로고"></a></div>
+    <nav>
+      <a href="index.html">시설찾기</a>
+      <a href="notice.html">공지사항</a>
+      <a href="faq.html">QnA</a>
+    </nav>
+  </header>
+  <main>
+    <div class="withdraw-modal" style="max-width:400px;margin:80px auto;padding:32px 24px;background:#fff;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.08);text-align:center;">
+      <h2>탈퇴하기</h2>
+      <p>정말 탈퇴하시겠습니까?<br>탈퇴 시 내 정보 및 저장한 시설 정보가 삭제됩니다.</p>
+      <button style="background:#d32f2f;color:#fff;padding:10px 32px;border:none;border-radius:6px;margin:8px 4px;">탈퇴</button>
+      <button style="background:#eee;color:#222;padding:10px 32px;border:none;border-radius:6px;margin:8px 4px;" onclick="history.back()">취소</button>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script>
+    fetch('header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
+    fetch('footer.html').then(r=>r.text()).then(t=>document.getElementById('footer').innerHTML=t);
+  </script>
+</body>
+</html> 

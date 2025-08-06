@@ -1,0 +1,98 @@
+body { background: #fff; }
+.passedit-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.passedit-box {
+  width: 600px;
+  max-width: 98vw;
+  background: #fff;
+  border: 1.5px solid #bbb;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(120,160,255,0.07);
+  padding: 48px 48px 40px 48px;
+  margin: 48px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.passedit-title {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin-bottom: 36px;
+  color: #222;
+  text-align: center;
+}
+.passedit-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.passedit-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+.passedit-label {
+  width: 120px;
+  font-size: 1.05em;
+  color: #222;
+  text-align: right;
+  font-weight: 500;
+}
+.passedit-input {
+  flex: 1 1 auto;
+  font-size: 1.08em;
+  padding: 12px 14px;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  outline: none;
+  background: #fafbfc;
+  color: #222;
+}
+.passedit-input::placeholder {
+  color: #bbb;
+  font-size: 1em;
+}
+.passedit-btn {
+  width: 100%;
+  margin-top: 32px;
+  background: #8eaeea;
+  color: #fff;
+  font-size: 1.18em;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 18px 0;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.passedit-btn:hover {
+  background: #6b8fd6;
+}
+.passedit-login-link {
+  display: block;
+  margin-top: 32px;
+  color: #8eaeea;
+  font-size: 0.98em;
+  text-align: right;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .passedit-box {
+    width: 99vw;
+    padding: 18px 2vw 18px 2vw;
+  }
+  .passedit-title { font-size: 1.1em; }
+  .passedit-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .passedit-label { width: 100%; text-align: left; margin-bottom: 2px; }
+  .passedit-btn { font-size: 1em; padding: 14px 0; }
+  .passedit-login-link { margin-top: 18px; }
+} 

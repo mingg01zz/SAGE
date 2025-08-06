@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>SAGE | 시설 비교</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+  <main>
+    <h2>시설 비교</h2>
+    <div class="compare-table-wrapper">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>시설 1</th>
+            <th>시설 2</th>
+            <th>시설 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>이름</td>
+            <td id="name1"></td>
+            <td id="name2"></td>
+            <td id="name3"></td>
+          </tr>
+          <tr>
+            <td>주소</td>
+            <td id="address1"></td>
+            <td id="address2"></td>
+            <td id="address3"></td>
+          </tr>
+          <tr>
+            <td>전화번호</td>
+            <td id="phone1"></td>
+            <td id="phone2"></td>
+            <td id="phone3"></td>
+          </tr>
+          <tr>
+            <td>등급</td>
+            <td id="grade1"></td>
+            <td id="grade2"></td>
+            <td id="grade3"></td>
+          </tr>
+          <!-- 필요시 추가 항목 -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="js/compare.js">
+    fetch('header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
+    fetch('footer.html').then(r=>r.text()).then(t=>document.getElementById('footer').innerHTML=t);
+  </script>
+
+</body>
+</html> 

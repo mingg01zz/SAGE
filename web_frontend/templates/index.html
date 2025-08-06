@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요양병원 챗봇</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8f9fa; }
+        #chatbox { width: 400px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; }
+        .message { margin: 10px 0; }
+        .user { text-align: right; color: #007bff; }
+        .bot { text-align: left; color: #343a40; }
+        #input-area { display: flex; margin-top: 20px; }
+        #user-input { flex: 1; padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+        #send-btn { padding: 8px 16px; border: none; background: #007bff; color: #fff; border-radius: 4px; margin-left: 8px; cursor: pointer; }
+        #send-btn:disabled { background: #b0c4de; }
+    </style>
+</head>
+<body>
+    <div id="chatbox">
+        <div id="messages"></div>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="메시지를 입력하세요..." autocomplete="off" />
+            <button id="send-btn">전송</button>
+        </div>
+    </div>
+    <script>
+        const messages = document.getElementById('messages');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        function appendMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = 'message ' + sender;
+            div.textContent = text;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        sendBtn.onclick = async function() {
+            const text = userInput.value.trim();
+            if (!text) return;
+            appendMessage(text, 'user');
+            userInput.value = '';
+            sendBtn.disabled = true;
+            try {
+                const res = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
+                const data = await res.json();
+                appendMessage(data.bot_message, 'bot');
+            } catch (e) {
+                appendMessage('오류가 발생했습니다.', 'bot');
+            }
+            sendBtn.disabled = false;
+            userInput.focus();
+        };
+
+        userInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') sendBtn.click();
+        });
+    </script>
+</body>
+</html>

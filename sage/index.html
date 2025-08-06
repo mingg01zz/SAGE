@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAGE - 시설찾기</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main class="facility-main">
+    <div class="facility-section">
+    <div class="facility-title-wrap">
+      <h2 class="facility-title">시설 찾기</h2>
+    </div>
+    <div class="facility-map-wrap">
+      <object class="facility-map-img" id="krMapObj" type="image/svg+xml" data="svg/kr_outline.svg" width="600" height="600"></object>
+    </div>
+    <div class="facility-region-filter center-region">
+      <div class="region-row">
+        <label class="region-item"><input type="checkbox" value="서울"> 서울</label>
+        <label class="region-item"><input type="checkbox" value="경기도"> 경기도</label>
+        <label class="region-item"><input type="checkbox" value="강원도"> 강원도</label>
+        <label class="region-item"><input type="checkbox" value="경상도"> 경상도</label>
+        <label class="region-item"><input type="checkbox" value="전라도"> 전라도</label>
+        <label class="region-item"><input type="checkbox" value="충청도"> 충청도</label>
+        <label class="region-item"><input type="checkbox" value="인천"> 인천</label>
+        <label class="region-item"><input type="checkbox" value="대전"> 대전</label>
+        <label class="region-item"><input type="checkbox" value="대구"> 대구</label>
+        <label class="region-item"><input type="checkbox" value="울산"> 울산</label>
+        <label class="region-item"><input type="checkbox" value="부산"> 부산</label>
+        <label class="region-item"><input type="checkbox" value="제주도"> 제주도</label>
+      </div>
+    </div>
+    <!-- 검색창 추가 -->
+    <div class="facility-searchbar-wrap">
+      <form id="facilitySearchForm" autocomplete="off" onsubmit="return false;" style="width:100%;display:flex;justify-content:center;align-items:center;">
+        <div class="facility-searchbar">
+          <input type="text" id="facilitySearchInput" placeholder="시설명 또는 주소로 검색" class="facility-search-input">
+          <button type="button" id="facilitySearchBtn" class="facility-search-btn">
+            <span class="facility-search-icon">검색</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="facility-list-section">
+      <div class="facility-list-header">
+        <span class="facility-count">00개</span>
+        <div class="facility-sort">
+          <button class="facility-sort-btn">평가등급순</button>
+          <button class="facility-sort-btn">가나다순</button>
+          <button class="facility-sort-btn">조회순</button>
+          <button class="facility-sort-btn">최신순</button>
+        </div>
+      </div>
+      <ul class="facility-list" id="facilityList">
+        <li class="facility-item">
+          <img src="img/1.jpg" alt="시설사진" class="facility-thumb">
+          <div class="facility-info">
+            <div class="facility-name">청운노인요양원 1</div>
+            <div class="facility-addr">서울특별시 동작구 매봉길 76(구기동)</div>
+            <div class="facility-tel">전화번호 <span>02-3217-0057</span></div>
+          </div>
+          <input type="checkbox" id="scrap1" class="facility-fav-chk">
+          <label for="scrap1" class="facility-fav-label"></label>
+        </li>
+        <li class="facility-item">
+          <img src="img/2.jpg" alt="시설사진" class="facility-thumb">
+          <div class="facility-info">
+            <div class="facility-name">다나음요양병원 2</div>
+            <div class="facility-addr">서울특별시 송파구 가락로 27길, 지하 1층~지상 6층 (만이동)</div>
+            <div class="facility-tel">전화번호 <span>02-412-7272</span></div>
+          </div>
+          <input type="checkbox" id="scrap2" class="facility-fav-chk">
+          <label for="scrap2" class="facility-fav-label"></label>
+        </li>
+        <li class="facility-item">
+          <img src="img/3.jpg" alt="시설사진" class="facility-thumb">
+          <div class="facility-info">
+            <div class="facility-name">로하스참사랑요양병원 3</div>
+            <div class="facility-addr">서울특별시 영등포구 영신로77가길 7, (문래동2가)</div>
+            <div class="facility-tel">전화번호 <span>02-2634-7500</span></div>
+          </div>
+          <input type="checkbox" id="scrap3" class="facility-fav-chk">
+          <label for="scrap3" class="facility-fav-label"></label>
+        </li>
+        <!-- 4~30번 예시 데이터 반복 -->
+        <li class="facility-item">
+          <img src="img/1.jpg" alt="시설사진" class="facility-thumb">
+          <div class="facility-info">
+            <div class="facility-name">청운노인요양원 4</div>
+            <div class="facility-addr">서울특별시 동작구 매봉길 76(구기동)</div>
+            <div class="facility-tel">전화번호 <span>02-3217-0057</span></div>
+          </div>
+          <input type="checkbox" id="scrap4" class="facility-fav-chk">
+          <label for="scrap4" class="facility-fav-label"></label>
+        </li>
+        <li class="facility-item">
+          <img src="img/2.jpg" alt="시설사진" class="facility-thumb">
+          <div class="facility-info">
+            <div class="facility-name">다나음요양병원 5</div>
+            <div class="facility-addr">서울특별시 송파구 가락로 27길, 지하 1층~지상 6층 (만이동)</div>
+            <div class="facility-tel">전화번호 <span>02-412-7272</span></div>
+          </div>
+          <input type="checkbox" id="scrap5" class="facility-fav-chk">
+          <label for="scrap5" class="facility-fav-label"></label>
+        </li>
+        <li class="facility-item">
+          <img src="img/3.jpg" alt="시설사진" class="facility-thumb">
+          <div class="facility-info">
+            <div class="facility-name">로하스참사랑요양병원 6</div>
+            <div class="facility-addr">서울특별시 영등포구 영신로77가길 7, (문래동2가)</div>
+            <div class="facility-tel">전화번호 <span>02-2634-7500</span></div>
+          </div>
+          <input type="checkbox" id="scrap6" class="facility-fav-chk">
+          <label for="scrap6" class="facility-fav-label"></label>
+        </li>
+        <!-- ... 7~30번까지 동일 패턴 반복 ... -->
+      </ul>
+      <div id="facilityPagination"></div>
+    </div>
+  </div>
+  </main>
+
+  <!-- footer -->
+  <div id="footer"></div>
+  <script>
+    fetch('header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
+    fetch('footer.html').then(r=>r.text()).then(t=>document.getElementById('footer').innerHTML=t);
+  </script>
+  <script src="js/index.js"></script>
+</body>
+</html>
+

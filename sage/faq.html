@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>SAGE | 자주 묻는 질문</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/faq.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main class="faq-main">
+      <div class="faq-title-wrap">
+        <h2 class="faq-title">자주 묻는 질문</h2>
+        <button class="faq-write-btn" onclick="location.href='faq-faqwrite.html'">글쓰기</button>
+      </div>
+      <div class="faq-table-section">
+        <table class="faq-table">
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>작성일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="faq-table-row" data-id="1">
+              <td>001</td>
+              <td>○○○○○○○?</td>
+              <td>○○○</td>
+              <td>2025-07-07</td>
+            </tr>
+            <tr class="faq-table-row" data-id="2">
+              <td>002</td>
+              <td>○○○○○○○?</td>
+              <td>○○○</td>
+              <td>2025-07-07</td>
+            </tr>
+            <tr class="faq-table-row" data-id="3">
+              <td>003</td>
+              <td>○○○○○○○?</td>
+              <td>○○○</td>
+              <td>2025-07-07</td>
+            </tr>
+            <tr class="faq-table-row" data-id="4">
+              <td>004</td>
+              <td>○○○○○○○?</td>
+              <td>○○○</td>
+              <td>2025-07-07</td>
+            </tr>
+            <tr class="faq-table-row" data-id="5">
+              <td>005</td>
+              <td>○○○○○○○?</td>
+              <td>○○○</td>
+              <td>2025-07-07</td>
+            </tr>
+            <tr class="faq-table-row" data-id="6">
+              <td>006</td>
+              <td>○○○○○○○?</td>
+              <td>○○○</td>
+              <td>2025-07-07</td>
+            </tr>
+            <tr class="faq-table-row" data-id="7">
+              <td>007</td>
+              <td>○○○○○○○?</td>
+              <td>○○○</td>
+              <td>2025-07-07</td>
+            </tr>
+            <tr class="faq-table-row" data-id="8">
+              <td>008</td>
+              <td>○○○○○○○?</td>
+              <td>○○○</td>
+              <td>2025-07-07</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="faq-pagination">
+        <a class="active" href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">&gt;</a>
+      </div>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script>
+    fetch('header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
+    fetch('footer.html').then(r=>r.text()).then(t=>document.getElementById('footer').innerHTML=t);
+    </script>
+  <script src="js/faq.js"></script>
+</body>
+</html> 

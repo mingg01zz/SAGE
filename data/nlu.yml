@@ -1,0 +1,35 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - 안녕
+    - 안녕하세요
+    - 하이
+    - 좋은 아침
+    - 반가워요
+
+- intent: goodbye
+  examples: |
+    - 잘 가
+    - 안녕히 계세요
+    - 나중에 봐요
+    - 또 봐요
+    - 좋은 하루 보내세요
+
+- intent: find_hospital
+  examples: |
+    - [서울](location)에 있는 요양병원 추천해줘
+    - [부산](location)에서 괜찮은 요양병원 어디 있어?
+    - [강남](location) 요양병원 비교해 줘
+    - [재활](service) 서비스 있는 병원 보여줘
+    - [운동](service) 가능한 요양원 알려줘
+    - [서울](location) 근처에 [재활](service) 서비스 있는 곳 3곳만 추천해줘
+    - [300000](price)원 이하 요양병원 추천해줘
+    - [서울](location) 지역에서 [300000](price)원 이하 요양병원 찾아줘
+    - [서울](location) 근처에서 [운동](service) 프로그램 있는 병원 알려줘
+    - [500000](price)원 안 넘는 [부산](location) 병원 추천해줘
+    - [200000](price)원 정도의 요양병원 있어?
+    - [요양](service) 프로그램 있는 병원 알려줘
+    - [종로](location)구 요양병원 찾아줘
+    - [서울](location)에 있는 [요양](service) 서비스 병원 알려줘

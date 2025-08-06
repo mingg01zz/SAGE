@@ -1,0 +1,6 @@
+version: "3.0"
+rules:
+  - rule: 인사하기
+    steps:
+      - intent: greet
+      - action: utter_greet

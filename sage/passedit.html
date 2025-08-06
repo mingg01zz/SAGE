@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>SAGE | 비밀번호 재설정</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/passedit.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main class="passedit-main">
+    <div class="passedit-box">
+      <div class="passedit-title">비밀번호 재설정</div>
+      <form class="passedit-form">
+        <div class="passedit-row">
+          <label class="passedit-label" for="newPw">새 비밀번호</label>
+          <input class="passedit-input" id="newPw" type="password" placeholder="영문, 숫자, 특수문자와 함께 사용하면 보다 안전합니다." autocomplete="new-password">
+        </div>
+        <div class="passedit-row">
+          <label class="passedit-label" for="newPw2">새 비밀번호 확인</label>
+          <input class="passedit-input" id="newPw2" type="password" placeholder="비밀번호를 확인해주세요" autocomplete="new-password">
+        </div>
+        <button type="submit" class="passedit-btn">로그인하러 가기</button>
+      </form>
+      <a href="login.html" class="passedit-login-link">로그인하기</a>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script>
+    fetch('header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
+    fetch('footer.html').then(r=>r.text()).then(t=>document.getElementById('footer').innerHTML=t);
+  </script>
+</body>
+</html>
