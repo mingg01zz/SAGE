@@ -383,7 +383,7 @@ server {
 
 ## 데모 및 저장소
 - GitHub: [링크]  
-- 시연 영상: [링크]
+- 시연 영상: [링크]https://youtu.be/BcjNaAuBFFU
 
 ---
 
